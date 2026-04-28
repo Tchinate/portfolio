@@ -8,3 +8,7 @@
   width: 100%;
   height: 80vh; /* hauteur relative à la fenêtre */
 }
+
+.space-footer {
+  margin-bottom: 40px;
+}
