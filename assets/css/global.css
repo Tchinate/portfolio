@@ -12,3 +12,27 @@
 .space-footer {
   margin-bottom: 40px;
 }
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+/*
+* {
+  outline: 1px solid red;
+}
+
+
+.contact-page {
+  background: rgba(0, 0, 255, 0.1);
+}
+
+[class^="col-"] {
+  border: 1px dashed green;
+}
+
+input, textarea {
+  outline: 1px solid #ff8800;
+}
+  */

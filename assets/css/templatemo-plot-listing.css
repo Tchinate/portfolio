@@ -1218,6 +1218,7 @@ contact
   background-color: #f7f7f7;
   border-radius: 7px;
   overflow: hidden;
+  border: 1px solid #c8d6f0;
 }
 
 .contact-page .inner-content #map {
@@ -1229,7 +1230,7 @@ contact
 
 form#contact {
   position: relative;
-  margin: 0px 60px 0px 45px;
+  margin: 25px 60px 35px 45px;
 }
 
 form#contact input {
