@@ -18,180 +18,178 @@
   margin-right: auto;
   margin-left: auto;
 }
-/*
-* {
-  outline: 1px solid red;
+
+  /*---------------------------------------------   TIMELINE   ---------------------------------------------*/
+
+.timeline-demo{
+  background:#8d99af;
+  padding: 50px 0px 50px;
 }
 
-
-.contact-page {
-  background: rgba(0, 0, 255, 0.1);
-}
-
-[class^="col-"] {
-  border: 1px dashed green;
-}
-
-input, textarea {
-  outline: 1px solid #ff8800;
-}
-  */
-
-.timeline {
-  white-space: nowrap;
-  overflow-x: hidden;
-}
-
-.timeline ol {
-  font-size: 0;
-  width: 100vw;
-  padding: 250px 0;
-}
-
-.timeline ol li {
+.main-timeline{
   position: relative;
-  display: inline-block;
-  list-style-type: none;
-  width: 160px;
-  height: 3px;
-  background: #fff;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
-.timeline ol li:not(:first-child) {
-  margin-left: 14px;
-}
-
-.timeline ol li:not(:last-child)::after {
-  content: '';
+.main-timeline:before{
+  content:"";
+  width: 3px;
+  height: 100%;
+  background: #272626;
   position: absolute;
-  top: 50%;
-  left: calc(100% + 1px);
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  transform: translateY(-50%);
+  top: 0;
+  left: 50%;
+}
+
+.main-timeline .timeline{
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.main-timeline .timeline:before, .main-timeline .timeline:after{
+  content:"";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.main-timeline .timeline-icon{
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: #F45B69;
-}
-
-.timeline ol li div {
+  background: #000;
+  overflow: hidden;
+  margin-left: -23px;
   position: absolute;
-  left: calc(100% + 7px);
-  width: 280px;
-  padding: 15px;
-  font-size: 1rem;
-  white-space: normal;
-  color: black;
-  background: white;
+  top: 0px;
+  left: 50%;
+  text-align: center;
 }
 
-.timeline ol li div::before {
-  content: '';
+.main-timeline .timeline-icon i{
+  font-size: 30px;
+  line-height: 50px;
+  color: #fff;
+}
+.main-timeline .timeline-content{
+  width: 45%;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.main-timeline .timeline-content:before{
+  content:"";
+  border-left: 7px solid rgb(0, 0, 0);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
+  left: 45%;
+  top: 20px;
 }
 
-.timeline ol li:nth-child(odd) div {
-  top: -16px;
-  transform: translateY(-100%);
+.main-timeline .title{
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  padding: 10px; 
+  background: #545b68;
+  border-radius: 3px 3px 0 0;
+  margin: -20px -20px 10px;
 }
 
-.timeline ol li:nth-child(odd) div::before {
-  top: 100%;
-  border-width: 8px 8px 0 0;
-  border-color: white transparent transparent transparent;
+.main-timeline .description{
+  font-size: 14px;
+  color: #000;
 }
 
-.timeline ol li:nth-child(even) div {
-  top: calc(100% + 16px);
+.main-timeline .read-more{
+  display: inline-block;
+  font-size: 12px;
+  color: #6e737d;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border: 2px solid #545b68;
+  position: relative;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 0 #6e737d;
+  -moz-box-shadow: 2px 2px 0 #6e737d;
+  -ms-box-shadow: 2px 2px 0 #6e737d;
+  box-shadow: 2px 2px 0 #6e737d;
 }
 
-.timeline ol li:nth-child(even) div::before {
-  top: -8px;
-  border-width: 8px 0 0 8px;
-  border-color: transparent transparent transparent white;
+.main-timeline .timeline-content.right{
+  float: right;
 }
 
-.timeline .arrows {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+.main-timeline .timeline-content.right:before{
+  content: "";
+  right: 45%;
+  left: inherit;
+  border-left: 0;
+  border-right: 7px solid rgb(0, 0, 0);
 }
 
-.timeline .arrows .arrow__prev {
-  margin-right: 20px;
+@media only screen and (max-width: 990px){
+  .main-timeline .title{
+    font-size: 25px;
+  }
+  .main-timeline .timeline-content::before{
+    top: 16px;
+  }
 }
 
-.timeline .disabled {
-  opacity: .5;
-}
-
-.timeline .arrows img {
-  width: 45px;
-  height: 45px;
-}
-
-.timeline ol {
-  transition: all 1s;
-}
-
-@media screen and (max-width: 599px) {
-  .timeline ol,
-  .timeline ol li {
-    width: auto; 
+@media only screen and (max-width: 767px){
+  .main-timeline{
+    margin-left: 20px;
   }
 
-  .timeline ol {
-    padding: 0;
-    transform: none !important;
+  .main-timeline:before{
+    left: 0;
   }
 
-  .timeline ol li {
-    display: block;
-    height: auto;
-    background: transparent;
+  .main-timeline .timeline-content{
+    width: 90%;
+    float: right;
   }
-  
-  .timeline ol li:first-child {
-    margin-top: 25px;
-  }
-
-  .timeline ol li:not(:first-child) {
-    margin-left: auto;
+  .main-timeline .timeline-content:before, .main-timeline .timeline-content.right:before{
+    left: 10%;
+    right: inherit;
+    margin-left: -6px;
+    border-left: 0;
+    border-right: 7px solid #1abc9c;
   }
 
-  .timeline ol li div {
-    width: 94%;
-    height: auto !important;
-    margin: 0 auto 25px;
+  .main-timeline .timeline-icon{
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 479px){
+  .main-timeline .timeline-content{
+    width: 85%;
   }
 
-  /*.timeline ol li:nth-child div {
-    position: static;
-  }*/
-
-  .timeline ol li:nth-child(odd) div {
-    transform: none;
+  .main-timeline .timeline-content:before, .main-timeline .timeline-content.right:before{
+    left: 15%;
   }
 
-  .timeline ol li:nth-child(odd) div::before,
-  .timeline ol li:nth-child(even) div::before {
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    border: none;
-    border-left: 1px solid white;
-    height: 25px;
+  .main-timeline .title{
+    font-size: 20px;
   }
 
-  .timeline ol li:last-child,
-  .timeline ol li:nth-last-child(2) div::before,
-  .timeline ol li:not(:last-child)::after,
-  .timeline .arrows {
-    display: none;
+  .main-timeline .timeline-content:before{
+    top: 13px;
   }
 }
