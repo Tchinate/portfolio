@@ -205,8 +205,24 @@
   margin-bottom: 8px;
 }
 
+.timeline-list-no li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+}
+
 .timeline-list li::before {
   content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #545b68;
+  font-size: 20px;
+  line-height: 14px;
+}
+
+.timeline-list-no li::before {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
